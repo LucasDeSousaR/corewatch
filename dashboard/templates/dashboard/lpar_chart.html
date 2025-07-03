@@ -1,0 +1,54 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+<h2 class="page-title">Gráfico de Utilização Diária: {{ lpar.nameLpar }}</h2>
+
+<div class="chart-container" style="position: relative; height:60vh; width:80vw; margin: auto;">
+    <canvas id="graficoLpar"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('graficoLpar');
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: {{ dias|safe }},
+        datasets: [
+            {
+                label: 'CPU (%)',
+                data: {{ uso_cpu|safe }},
+                borderColor: 'rgb(255, 99, 132)',
+                fill: false
+            },
+            {
+                label: 'MSU',
+                data: {{ uso_msu|safe }},
+                borderColor: 'rgb(54, 162, 235)',
+                fill: false
+            },
+            {
+                label: 'SMF',
+                data: {{ valor_smf|safe }},
+                borderColor: 'rgb(255, 206, 86)',
+                fill: false
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            x: {
+                title: { display: true, text: 'Dia' }
+            },
+            y: {
+                title: { display: true, text: 'Valor' }
+            }
+        }
+    }
+});
+</script>
+{% endblock %}
