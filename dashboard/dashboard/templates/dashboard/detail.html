@@ -1,0 +1,86 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<h2 class="page-title">Detalhes da LPAR: {{ lpar.nameLpar }}</h2>
+
+<div class="summary-cards">
+    <div class="card">
+        <h4>Último uso de CPU</h4>
+        <p>{{ cpu_data|last }}%</p>
+    </div>
+    <div class="card">
+        <h4>Último uso de MSU</h4>
+        <p>{{ msu_data|last }}%</p>
+    </div>
+    <div class="card">
+        <h4>Último valor de SMF</h4>
+        <p>{{ smf_data|last }}%</p>
+    </div>
+</div>
+
+<div class="charts" style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+    <div style="flex: 1 1 30%; max-width: 30%;">
+        <canvas id="cpuChart"></canvas>
+    </div>
+    <div style="flex: 1 1 30%; max-width: 30%;">
+        <canvas id="msuChart"></canvas>
+    </div>
+    <div style="flex: 1 1 30%; max-width: 30%;">
+        <canvas id="smfChart"></canvas>
+    </div>
+</div>
+<div class="actions" style="margin-top: 20px;">
+    <a href="{% url 'dashboard:lpar_chart' lpar.idLpar %}" class="btn btn-primary">
+        📊 Ver gráfico diário
+    </a>
+    <a href="{% url 'dashboard:index' %}" class="btn btn-secondary">
+        ← Voltar
+    </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const labels = {{ timestamps|safe }};
+
+    const cpuChart = new Chart(document.getElementById('cpuChart'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'CPU (%)',
+                data: {{ cpu_data|safe }},
+                borderColor: 'rgb(255, 99, 132)',
+                fill: false
+            }]
+        }
+    });
+
+    const msuChart = new Chart(document.getElementById('msuChart'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'MSU (%)',
+                data: {{ msu_data|safe }},
+                borderColor: 'rgb(54, 162, 235)',
+                fill: false
+            }]
+        }
+    });
+
+    const smfChart = new Chart(document.getElementById('smfChart'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'SMF (%)',
+                data: {{ smf_data|safe }},
+                borderColor: 'rgb(255, 206, 86)',
+                fill: false
+            }]
+        }
+    });
+</script>
+{% endblock %}

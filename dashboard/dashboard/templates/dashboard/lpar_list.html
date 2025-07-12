@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>LPARs Disponíveis</h1>
+
+<div class="lpar-container">
+    {% if lpars %}
+        {% for lpar in lpars %}
+            <div class="lpar-card">
+                <a href="{% url 'dashboard:lpar_detail' lpar.idLpar %}">
+                    <h3>{{ lpar.nameLpar }}</h3>
+                    <p>{{ lpar.lparEnv }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Nenhuma LPAR disponível no momento.</p>
+    {% endif %}
+</div>
+{% endblock %}

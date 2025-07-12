@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Bem-vindo ao CoreWatch</h1>
+
+<div class="info-box">
+    <h2>Sobre o Projeto</h2>
+    <p>
+        O CoreWatch é um sistema de monitoramento de LPARs em ambientes Mainframe. 
+        Ele permite visualizar o uso de CPU, MSU e SMF, facilitando a análise e o diagnóstico de desempenho.
+    </p>
+</div>
+
+<div class="info-box">
+    <h2>Projeto de Conclusão de Curso de Análise e Desenvolvimento de Sistemas</h2>
+    <h2>FATEC Campinas</h2>
+    <p>
+        Este projeto foi desenvolvido como parte de um trabalho acadêmico da instituição <strong>FATEC Campinas</strong>
+        Nesse projeto foi utilizado o framework Django para o desenvolvimento do sistema de monitoramento e a plataforma ZOWE para desenvolver dentro do mainframe.
+        Banco de dado utilizado foi o MongoDB nos proporcionando uma estrutura flexível e escalável para armazenar os dados de monitoramento.
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{
+    "S0W1": {
+        "infoLpar": {
+            "ultimoIpl": "2025-05-11T15:22:53",
+            "releaseOs": "z/OS 03.01.00",
+            "versaoVm": "z/VM   7.3.0",
+            "nomeVm": "DGBGMFA",
+            "nomeLpar": "S0W1"
+        },
+        "historico": [
+            {
+                "timestamp": "2025-05-06T17:27:00",
+                "tipo": "USO_SMF",
+                "datasetAtivo": "SYS1.S0W1.SYS1.S0W1.MAN3",
+                "percentualUso": 40
+            },
+            {
+                "timestamp": "2025-05-24T16:10:59",
+                "tipo": "USO_SMF",
+                "datasetAtivo": "SYS1.S0W1.SYS1.S0W1.MAN2",
+                "percentualUso": 49
+            }
+        ],
+        "alertas": [
+            {
+                "timestamp": "2025-05-06T17:26:38",
+                "nivel": "AVISO",
+                "idMensagem": "HWSC0000I",
+                "mensagemCompleta": "*49 HWSC0000I *IMS CONNECT READY* IMS15HWS"
+            },
+            {
+                "timestamp": "2025-05-06T17:26:38",
+                "nivel": "INFO",
+                "idMensagem": "DFS996I",
+                "mensagemCompleta": "*48 DFS996I *IMS READY* IVP1"
+            },
+            {
+                "timestamp": "2025-05-06T17:27:23",
+                "nivel": "ERRO",
+                "idMensagem": "EZZ0401I",
+                "mensagemCompleta": "EZZ0401I SYNTAX ERROR IN FILE: <CONSOLE> ON LINE: 1 AT: ' '"
+            },
+            {
+                "timestamp": "2025-05-24T16:10:24",
+                "nivel": "AVISO",
+                "idMensagem": "IEFC166D",
+                "mensagemCompleta": "*28 IEFC166D REPLY Y/N TO EXECUTE/SUPPRESS COMMAND"
+            },
+            {
+                "timestamp": "2025-05-24T16:10:24",
+                "nivel": "AVISO",
+                "idMensagem": "IEFC166D",
+                "mensagemCompleta": "*27 IEFC166D REPLY Y/N TO EXECUTE/SUPPRESS COMMAND"
+            },
+            {
+                "timestamp": "2025-05-24T16:10:24",
+                "nivel": "AVISO",
+                "idMensagem": "HWSC0000I",
+                "mensagemCompleta": "*13 HWSC0000I *IMS CONNECT READY* IMS15HWS"
+            },
+            {
+                "timestamp": "2025-05-24T16:10:24",
+                "nivel": "AVISO",
+                "idMensagem": "DFS810A",
+                "mensagemCompleta": "*03 DFS810A IMS READY 25132/1034110 IMS15CR1.IMS15C R1 IVP1"
+            },
+            {
+                "timestamp": "2025-05-24T16:11:21",
+                "nivel": "ERRO",
+                "idMensagem": "EZZ0401I",
+                "mensagemCompleta": "EZZ0401I SYNTAX ERROR IN FILE: <CONSOLE> ON LINE: 1 AT: ' '"
+            }
+        ]
+    }
+}

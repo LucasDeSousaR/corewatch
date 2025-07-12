@@ -1,0 +1,21 @@
+# Teste de Sanidade
+
+| **ID** | **Descrição do Teste** | **Critério de Aceitação** | **Requisitos Relacionados** |
+| --- | --- | --- | --- |
+| **TS01** | Verificar se o sistema está se conectando à API do mainframe corretamente e os dados extraídos estão consistentes. | Dados do mainframe são extraídos e exibidos no formato JSON no banco de dados, sem inconsistências. | RF1, RNF1 |
+| **TS02** | Testar se o dashboard exibe informações básicas da LPAR (CPU, memória, I/O) corretamente, mesmo após alterações recentes. | Informações são exibidas no dashboard sem erros ou dados inconsistentes, refletindo as alterações mais recentes. | RF3, RNF4 |
+| **TS03** | Validar se um alerta é acionado quando os parâmetros configurados ultrapassam limites críticos, mantendo configuração após alterações no sistema. | Alerta é acionado e exibido na interface ou enviado via notificação, conforme configurado previamente. | RF4, RF8, RNF6 |
+| **TS04** | Garantir que o sistema permite login e logout de usuários com controle de permissões ativo, considerando diferentes perfis de acesso. | Usuários comuns e administradores podem acessar o sistema com credenciais válidas e realizar logout sem erros. | RF9, RNF1 |
+| **TS05** | Testar se o histórico de monitoramento está sendo exibido corretamente na interface, mesmo após alterações no banco de dados. | Dados do histórico são exibidos em ordem cronológica e sem inconsistências, mesmo após alterações estruturais. | RF5, RNF6 |
+| **TS06** | Verificar se os parâmetros globais de monitoramento podem ser configurados e mantidos corretamente após alterações no sistema. | Parâmetros globais são alterados e aplicados corretamente ao sistema, sem regressões. | RF10, RNF6 |
+| **TS07** | Testar se a frequência de coleta de dados pode ser configurada e aplicada corretamente. | Dados são coletados no intervalo configurado pelo usuário, sem interrupções ou atrasos. | RF7, RNF6 |
+| **TS08** | Validar se o log de acesso está sendo atualizado com cada login e logout realizado no sistema, mesmo após atualizações de segurança. | Logs de acesso contêm registros consistentes de data, hora e usuário, sem perdas após alterações no sistema. | RF11, RNF1 |
+| **TS09** | Testar se eventos críticos geram notificações para os usuários via e-mail ou SMS, verificando o tempo de envio. | Notificação é enviada imediatamente quando o evento crítico ocorre, com tempo de envio inferior a 5 segundos. | RF8, RNF6 |
+| **TS10** | Garantir que relatórios de uso são gerados e podem ser baixados pelo administrador com informações completas e precisas. | Relatório é gerado e contém informações completas e corretas de uso da LPAR, sem inconsistências. | RF6, RNF6 |
+| **TS11** | Verificar se atividades disruptivas, como alterações de parâmetros globais, são registradas corretamente no log. | Logs de atividades mostram corretamente as ações realizadas e os responsáveis, sem perdas de dados. | RF12, RNF6 |
+| **TS12** | Testar se o sistema mantém desempenho aceitável ao monitorar até 50 LPARs simultaneamente. | Sistema responde em menos de 2 segundos ao monitorar até 50 LPARs simultaneamente. | RNF2, RNF3 |
+| **TS13** | Validar se a interface funciona corretamente nos navegadores Chrome, Firefox e Edge. | Sistema é acessível e funcional nos navegadores testados, sem erros de exibição ou comportamento. | RNF7 |
+| **TS14** | Testar se usuários podem acessar simultaneamente sem causar falhas ou erros no sistema, mesmo em cenários de carga elevada. | Múltiplos usuários acessam o sistema simultaneamente e ele permanece funcional, suportando até 100 usuários. | RNF3, RNF5 |
+| **TS15** | Testar cenários de erro na API do mainframe, incluindo mensagens de erro e continuidade do sistema. | Mensagens de erro amigáveis são exibidas e o sistema continua funcional para outras operações. | RF5, RNF6 |
+| **TS16** | Validar comportamento do sistema após falhas de conectividade com a base de dados. | Sistema notifica o problema, tenta reconectar automaticamente e mantém estabilidade. | RF7, RNF6 |
+| **TS17** | Testar escalabilidade com aumento de usuários simultâneos além da capacidade projetada. | Sistema suporta até 100 usuários simultâneos sem degradação significativa no desempenho. | RNF3, RNF5 |
